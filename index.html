@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Happy Birthday Zahra Syifa Salsabila — 5 Juli 2026">
+  <title>Happy Birthday, Jara 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════ LOCK SCREEN ═══════════════════ -->
+<div id="lock-screen">
+  <canvas id="lock-stars"></canvas>
+  <div class="lock-content">
+    <p class="lock-pre">Untuk seseorang yang sangat berarti…</p>
+    <h1 class="lock-title">Ada sesuatu untukmu,<br><em>Jara.</em></h1>
+    <div class="lock-date-badge">5 Juli 2026</div>
+    <div id="lock-countdown">
+      <div class="lc-item"><span id="ld">--</span><label>Hari</label></div>
+      <div class="lc-sep">:</div>
+      <div class="lc-item"><span id="lh">--</span><label>Jam</label></div>
+      <div class="lc-sep">:</div>
+      <div class="lc-item"><span id="lm">--</span><label>Menit</label></div>
+      <div class="lc-sep">:</div>
+      <div class="lc-item"><span id="ls">--</span><label>Detik</label></div>
+    </div>
+    <p class="lock-hint">— dari seseorang yang menunggumu —</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ INTRO ═══════════════════ -->
+<div id="intro-screen">
+  <canvas id="stars-canvas"></canvas>
+  <div class="intro-content">
+    <div id="intro-typing"></div>
+    <div id="intro-enter" style="display:none">
+      <button id="enter-btn">✦ &nbsp;Buka Hadiahmu&nbsp; ✦</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ HEART RAIN ═══════════════════ -->
+<div id="heart-rain"></div>
+
+<!-- ═══════════════════ PAJERO SURPRISE ═══════════════════ -->
+<div id="pajero-surprise">
+  <div class="pajero-content">
+    <div class="pajero-tag">🎀 Kejutan Spesial! 🎀</div>
+    <svg class="pajero-svg" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hlight" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="white" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <!-- Shadow -->
+      <ellipse cx="240" cy="213" rx="195" ry="11" fill="rgba(0,0,0,.13)"/>
+      <!-- Body -->
+      <rect x="40" y="110" width="400" height="85" rx="8" fill="#2C3E50"/>
+      <rect x="40" y="110" width="400" height="14" rx="8" fill="#34495E"/>
+      <!-- Roof -->
+      <path d="M100 110 L130 55 L350 55 L380 110Z" fill="#1a252f"/>
+      <path d="M110 108 L138 62 L340 62 L368 108Z" fill="#2C3E50"/>
+      <!-- Windows -->
+      <path d="M114 106 L140 66 L214 66 L214 106Z" fill="#AED6F1" opacity=".75"/>
+      <path d="M226 106 L226 66 L338 66 L362 106Z" fill="#AED6F1" opacity=".75"/>
+      <rect x="217" y="62" width="9" height="46" fill="#1a252f"/>
+      <!-- Door lines -->
+      <line x1="214" y1="62" x2="214" y2="195" stroke="#1a252f" stroke-width="3"/>
+      <line x1="308" y1="62" x2="308" y2="195" stroke="#1a252f" stroke-width="3"/>
+      <!-- Wheels -->
+      <circle cx="118" cy="198" r="37" fill="#1C2833"/>
+      <circle cx="118" cy="198" r="27" fill="#2C3E50"/>
+      <circle cx="118" cy="198" r="17" fill="#1C2833"/>
+      <circle cx="118" cy="198" r="7"  fill="#AAB7B8"/>
+      <circle cx="362" cy="198" r="37" fill="#1C2833"/>
+      <circle cx="362" cy="198" r="27" fill="#2C3E50"/>
+      <circle cx="362" cy="198" r="17" fill="#1C2833"/>
+      <circle cx="362" cy="198" r="7"  fill="#AAB7B8"/>
+      <!-- Wheel spokes -->
+      <line x1="118" y1="171" x2="118" y2="183" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="118" y1="213" x2="118" y2="225" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="91"  y1="198" x2="103" y2="198" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="133" y1="198" x2="145" y2="198" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="362" y1="171" x2="362" y2="183" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="362" y1="213" x2="362" y2="225" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="335" y1="198" x2="347" y2="198" stroke="#AAB7B8" stroke-width="3"/>
+      <line x1="377" y1="198" x2="389" y2="198" stroke="#AAB7B8" stroke-width="3"/>
+      <!-- Front bumper & headlights -->
+      <rect x="30"  y="153" width="52" height="30" rx="6" fill="#1a252f"/>
+      <rect x="34"  y="122" width="34" height="17" rx="4" fill="#F9E79F"/>
+      <rect x="34"  y="122" width="34" height="17" rx="4" fill="url(#hlight)" opacity=".5"/>
+      <rect x="34"  y="144" width="34" height="5"  rx="2" fill="#AED6F1" opacity=".8"/>
+      <!-- Rear bumper & lights -->
+      <rect x="398" y="153" width="48" height="30" rx="6" fill="#1a252f"/>
+      <rect x="412" y="122" width="30" height="17" rx="4" fill="#E74C3C"/>
+      <rect x="412" y="144" width="30" height="5"  rx="2" fill="#C0392B"/>
+      <!-- Grille bars -->
+      <rect x="33" y="157" width="48" height="4" rx="2" fill="#AAB7B8" opacity=".5"/>
+      <rect x="33" y="164" width="48" height="4" rx="2" fill="#AAB7B8" opacity=".35"/>
+      <rect x="33" y="171" width="48" height="4" rx="2" fill="#AAB7B8" opacity=".25"/>
+      <!-- Badge -->
+      <text x="240" y="175" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#ECF0F1" letter-spacing="3">PAJERO</text>
+      <!-- Roof rails -->
+      <rect x="132" y="51" width="216" height="5" rx="2" fill="#AAB7B8" opacity=".35"/>
+      <!-- Bow on roof -->
+      <ellipse cx="218" cy="49" rx="21" ry="11" fill="#FF69B4" opacity=".9" transform="rotate(-18 218 49)"/>
+      <ellipse cx="258" cy="49" rx="21" ry="11" fill="#FF69B4" opacity=".9" transform="rotate(18 258 49)"/>
+      <circle cx="238" cy="49" r="9" fill="#FF1493" opacity=".9"/>
+      <!-- Tag -->
+      <line x1="395" y1="88" x2="405" y2="108" stroke="#C9A98A" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <rect x="393" y="75" width="66" height="32" rx="5" fill="#F7F5F2" stroke="#C9A98A"/>
+      <text x="426" y="88" text-anchor="middle" font-family="Arial" font-size="9" fill="#4A4A4A">Gratis dong</text>
+      <text x="426" y="101" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#C9A98A">buat Jara 💛</text>
+      <text x="240" y="16" text-anchor="middle" font-family="serif" font-size="13" fill="#FF69B4">🎀 untuk Jara</text>
+    </svg>
+    <div class="pajero-label">Mitsubishi Pajero Sport — untukmu, Jara 😄</div>
+    <p class="pajero-note">*ini hadiah kejutan lucu-lucuan aja ya 😄<br>yang penting kamu tau betapa spesialnya kamu 💛</p>
+    <button id="pajero-close">Buka Suratnya →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════ LIGHTBOX ═══════════════════ -->
+<div id="lightbox">
+  <button id="lightbox-close">✕</button>
+  <button id="lightbox-prev">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button id="lightbox-next">›</button>
+</div>
+
+<!-- ═══════════════════ STORY VIEWER ═══════════════════ -->
+<div id="story-viewer" class="hidden">
+  <div class="story-viewer-inner">
+    <div class="story-progress-bars" id="story-bars"></div>
+    <button id="story-close">✕</button>
+    <div class="story-viewer-header">
+      <img src="assets/photos/1.jpeg" class="story-avatar" alt="">
+      <div>
+        <div class="story-username">Jara &amp; Rifqy</div>
+        <div id="story-num">Kenangan 1</div>
+      </div>
+    </div>
+    <img id="story-img" src="" alt="" class="story-viewer-img">
+    <div class="story-tap-prev"></div>
+    <div class="story-tap-next"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ MAIN CONTENT ═══════════════════ -->
+<div id="main-content" class="hidden">
+
+  <!-- 1. GIFT BOX -->
+  <section id="gift-section">
+    <canvas id="gift-stars"></canvas>
+    <div class="gift-wrapper">
+      <p class="gift-pre-text">Ada sesuatu untukmu, Jara…</p>
+      <div id="gift-box" class="gift-box">
+        <div class="gift-lid">
+          <div class="gift-bow"><div class="gift-bow-knot"></div></div>
+          <div class="gift-lid-ribbon-h"></div>
+        </div>
+        <div class="gift-body">
+          <div class="gift-ribbon-h"></div>
+          <div class="gift-ribbon-v"></div>
+        </div>
+      </div>
+      <p id="gift-hint">Klik untuk membuka ✨</p>
+    </div>
+  </section>
+
+  <!-- 2. LETTER -->
+  <section id="letter-section">
+    <div class="letter-container">
+      <div class="letter-paper">
+        <div class="letter-date-line">— 5 Juli 2026 —</div>
+        <h2 class="letter-greeting">Hai Jara,</h2>
+        <div class="letter-body">
+          <p>Aku nggak tahu apakah ada kata-kata yang benar-benar cukup untuk menggambarkan betapa berharganya kamu buat aku.</p>
+          <p>Sejak 23 September 2025, perlahan kamu menjadi bagian dari hari-hariku. Dari hal-hal sederhana yang mungkin terlihat biasa, sampai momen-momen yang selalu berhasil membuat aku tersenyum ketika mengingatnya kembali.</p>
+          <p class="poem-line">Aku suka caramu hadir.</p>
+          <p class="poem-line">Aku suka bagaimana kamu bisa membuat hari yang melelahkan terasa lebih ringan hanya dengan satu pesan sederhana.</p>
+          <p class="poem-line">Aku suka bagaimana kamu tetap menjadi dirimu sendiri, tanpa perlu berusaha menjadi siapa pun untuk membuat orang lain terkesan.</p>
+          <p>Dan yang paling aku suka, adalah kenyataan bahwa dari begitu banyak orang di dunia ini, aku bisa mengenal seseorang sebaik kamu.</p>
+          <p class="poem-line">Mungkin aku tidak selalu sempurna.</p>
+          <p class="poem-line">Mungkin aku tidak selalu tahu harus berkata apa.</p>
+          <p class="poem-line">Mungkin aku sering melakukan kesalahan.</p>
+          <p>Tapi satu hal yang selalu aku tahu — aku selalu bersyukur karena semesta mempertemukan aku dengan kamu.</p>
+          <p>Menjelang hari ulang tahunmu, aku hanya ingin kamu tahu bahwa kamu sangat berarti.</p>
+          <p>Aku berharap di usia yang baru nanti, semua doa baik yang kamu simpan diam-diam bisa menemukan jalannya untuk menjadi nyata.</p>
+          <p class="poem-line">Aku berharap kamu selalu sehat.</p>
+          <p class="poem-line">Aku berharap kamu selalu bahagia.</p>
+          <p class="poem-line">Aku berharap kamu selalu dikelilingi orang-orang yang tulus mencintaimu.</p>
+          <p>Dan aku berharap, ketika suatu hari nanti kamu melihat kembali halaman ini, kamu akan ingat bahwa pernah ada seseorang yang membuat tempat kecil di internet hanya untuk merayakan keberadaanmu.</p>
+          <p><strong>Happy Birthday, Jara.</strong><br>Terima kasih sudah menjadi dirimu.</p>
+        </div>
+        <div class="letter-signature">— Rifqy ❤️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COUNTDOWN -->
+  <section id="countdown-section">
+    <canvas id="cd-stars"></canvas>
+    <div class="countdown-inner">
+      <span class="countdown-label reveal">Menghitung hari menuju harimu…</span>
+      <div id="main-countdown">
+        <div class="cd-item"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Hari</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Jam</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Menit</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Detik</span></div>
+      </div>
+      <div id="birthday-now" class="birthday-message">
+        <h2>🎂 Happy Birthday, Jara! 🎂</h2>
+        <p>Hari ini tiba. Semoga ini jadi salah satu hari paling bahagia dalam hidupmu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TIMELINE -->
+  <section id="timeline-section">
+    <div style="text-align:center;margin-bottom:4rem">
+      <span class="section-eyebrow reveal">Perjalanan Kita</span>
+      <h2 class="section-title reveal">Dari September hingga Selamanya</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle reveal" style="margin:0 auto">Setiap bulan punya ceritanya sendiri. Dan cerita ini, adalah salah satu favoritku.</p>
+    </div>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      <div class="timeline"></div>
+    </div>
+  </section>
+
+  <!-- 5. GALLERY -->
+  <section id="gallery-section">
+    <div class="gallery-header">
+      <span class="section-eyebrow reveal">Kenangan Kita</span>
+      <h2 class="section-title reveal">Galeri Polaroid</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle reveal" style="margin:0 auto">Klik foto untuk melihat lebih dekat ✨</p>
+    </div>
+    <div class="gallery-grid"></div>
+  </section>
+
+  <!-- 6. STORY MODE -->
+  <section id="story-section">
+    <div style="text-align:center;margin-bottom:1rem">
+      <span class="section-eyebrow reveal">Instagram Story</span>
+      <h2 class="section-title story-section-title reveal">Story Kita</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle reveal" style="margin:0 auto;color:var(--soft)">Tap untuk melihat kenangan dalam bingkai.</p>
+    </div>
+    <div class="story-circles"></div>
+  </section>
+
+  <!-- 7. 100 REASONS -->
+  <section id="reasons-section">
+    <div class="reasons-header">
+      <span class="section-eyebrow reveal">Untuk Zahra Syifa Salsabila</span>
+      <span class="reasons-counter reveal">100</span>
+      <h2 class="section-title reveal">Alasan Aku Suka Kamu</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="reasons-grid"></div>
+  </section>
+
+  <!-- 8. VIDEO MEMORIES -->
+  <section id="video-section">
+    <div class="video-header">
+      <span class="section-eyebrow reveal">Memories</span>
+      <h2 class="section-title reveal">Video Kenangan</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="video-grid">
+      <div class="video-card reveal">
+        <video src="assets/videos/video1.mp4" controls playsinline preload="metadata"></video>
+        <div class="video-caption">Kenangan yang tak terlupakan ✨</div>
+      </div>
+      <div class="video-card reveal">
+        <video src="assets/videos/video2.mp4" controls playsinline preload="metadata"></video>
+        <div class="video-caption">Momen favoritku bersamamu 💛</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL -->
+  <section id="final-section">
+    <canvas id="confetti-canvas"></canvas>
+    <div class="final-content">
+      <span class="final-year reveal">5 Juli 2026</span>
+      <h3 class="final-title reveal">Selamat Ulang Tahun,</h3>
+      <h2 class="final-name reveal">Zahra Syifa<br>Salsabila</h2>
+      <div class="final-date reveal">Jara &nbsp;·&nbsp; Orang Paling Berharga</div>
+      <p class="final-message reveal">
+        Semoga di usia yang baru ini, semua yang kamu impikan perlahan menjadi nyata. Semoga kamu selalu bahagia, selalu sehat, dan selalu dikelilingi orang-orang terbaik yang memang kamu layak dapatkan.
+      </p>
+      <div class="final-from reveal">— dari Rifqy, dengan sepenuh hati ❤️</div>
+      <span class="final-hearts">❤️ 🎂 ✨ 🎁 💛</span>
+    </div>
+  </section>
+
+</div><!-- end #main-content -->
+
+<!-- ═══════════════════ MUSIC PLAYER ═══════════════════ -->
+<div id="music-player" class="hidden">
+  <audio id="bg-music" src="assets/music/music.mp3" loop preload="none"></audio>
+  <button id="music-toggle" title="Play/Pause">♪</button>
+  <div class="music-info">
+    <div class="music-title">Reality Club</div>
+    <div class="music-artist">Thank You for Hijacking…</div>
+  </div>
+  <div class="music-vinyl"></div>
+  <div class="music-progress-bar">
+    <div id="music-progress-fill"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
