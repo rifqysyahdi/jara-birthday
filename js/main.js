@@ -7,18 +7,43 @@
   // ─── CONFIG ─────────────────────────────────
   const BIRTHDAY   = new Date('2026-07-05T00:00:00');
   const ADMIN_KEY  = 'rifqy';
-  const PHOTO_COUNT = 20;
+  const PHOTO_COUNT = 32;
   const STORY_PHOTOS = [1,2,3,4,5,6,7,8,9,10];
   const STORY_DURATION = 5000;
 
   const PHOTO_CAPTIONS = [
-    'Senyummu, favoritku.', 'Kenangan yang berharga.', 'Aku suka momen ini.',
-    'Hari yang hangat.', 'Selalu bikin aku senyum.', 'Istimewa.',
-    'Momen kecil yang berarti besar.', 'Jara, dalam bingkai.', 'Aku suka foto ini.',
-    'Sederhana, tapi bermakna.', 'Tak terlupakan.', 'Tepat seperti adamu.',
-    'Hari yang tidak ingin aku lupakan.', 'Satu dari banyak alasan.', 'Tersenyum untukmu.',
-    'Selalu ada cerita di balik ini.', 'Cantik, seperti biasa.', 'Momen favoritku.',
-    'Kamu dan duniamu.', 'Untuk selalu diingat.'
+    'Ini senyum favoritku. ❤️',            // 1 - close-up selfie, peace sign
+    'Peace bareng, selalu seru.',           // 2 - café/resto, double peace sign
+    'Batikan kita, hari yang tenang.',      // 3 - close-up selfie, batik
+    'Suasana yang hangat, ditemanimu.',     // 4 - café feather decor, grey sweater
+    'Film apapun jadi seru kalau sama kamu.', // 5 - di bioskop, kursi biru
+    'Santai bareng, tapi berasa spesial.',  // 6 - selfie café, cokelat
+    'Mirror selfie di lift, outfit batik kompak. 🔥', // 7 - elevator mirror, batik
+    'Foto random, kenangan nyata.',         // 8 - outdoor selfie near windows
+    'Makan bareng, momen sederhana yang berharga.', // 9 - restaurant
+    'Perjalanan malam, senang sama kamu.',  // 10 - in car at night, maroon hijab
+    'Kamu dan matamu itu, nggak ada habisnya.', // 11 - solo Jara, chin on hand
+    'Nemu boneka, langsung cocok sama orangnya. 🦉', // 12 - pink owl plushie
+    'Kamu dan yang gemesin itu. 🐣',        // 13 - holding yellow chick figure
+    'Di toko boneka, betah banget. 🧸',    // 14 - crouching near stuffed animals
+    'Seragam sama, hari yang seru.',        // 15 - elevator mirror, blue uniforms
+    'Kelas jadi lebih menarik karena ada kamu.', // 16 - solo in class
+    'Lampu cantik, tapi kamu yang paling bercahaya. ✨', // 17 - café string lights
+    'Bahkan di layar laptop pun tetap bikin senyum.', // 18 - laptop screen photo
+    'Konyol bareng, dan itu yang aku suka. 😂', // 19 - covering mouths playfully
+    'Gaya bareng di lift, serasi terus.',   // 20 - elevator mirror selfie
+    'Aku suka kamu yang serius begini. 📷', // 21 - Jara pakai jaket kuning, pegang kamera
+    'Gelang yang sama, cerita yang sama. 🎶', // 22 - dua pergelangan tangan, gelang matching
+    'Hujan pun tetap cantik. 🌧️',          // 23 - Jara pakai jas hujan bening, outdoor malam
+    'Foto di laptop kamera, tetap bikin senyum. 💻', // 24 - layar laptop face detection selfie
+    'Momen random di kampus yang nggak mau aku lupa.', // 25 - laptop camera app, di kelas
+    'BT21 kita, imut seperti yang megang. 🐑', // 26 - dua tangan pegang keychain BT21
+    'Jara dan kucing yang langsung nyaman. 🐱', // 27 - Jara duduk, kucing calico di sebelahnya
+    'Buka blind box bareng, senang banget. 🐣', // 28 - dua tangan pegang figurine kuning lucu
+    'Rock on, Jara! 🤘',                    // 29 - Jara solo seragam biru, pose rock sign
+    'Momen TikTok yang aku simpan. 💙',    // 30 - screenshot TikTok, seragam biru berdua
+    'Selfie via laptop di momen spesial.',  // 31 - laptop camera di venue event/lomba
+    'Jara dikelilingi kucing, surganya dia. 🐈' // 32 - Jara duduk, dua kucing di sekitarnya
   ];
 
   const TIMELINE = [
@@ -303,7 +328,6 @@
   function buildTimeline() {
     const wrap=document.querySelector('.timeline'); if(!wrap) return;
     TIMELINE.forEach((item,i)=>{
-      const isRight = i%2===0;
       const entry=document.createElement('div');
       entry.className='timeline-entry';
       entry.innerHTML=`
@@ -484,6 +508,40 @@
     document.addEventListener('click',()=>{
       if(!isPlaying) audio.play().then(()=>{ isPlaying=true; btn.textContent='⏸'; player.classList.add('playing'); }).catch(()=>{});
     },{once:true});
+
+    // ── VIDEO ↔ MUSIC: pause music when video plays, resume when video pauses/ends ──
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('play', () => {
+        if (isPlaying) {
+          audio.pause();
+          isPlaying = false;
+          btn.textContent = '♪';
+          player.classList.remove('playing');
+          // Mark that we paused due to video, so we can resume
+          video._pausedMusic = true;
+        }
+      });
+      video.addEventListener('pause', () => {
+        if (video._pausedMusic) {
+          video._pausedMusic = false;
+          audio.play().then(() => {
+            isPlaying = true;
+            btn.textContent = '⏸';
+            player.classList.add('playing');
+          }).catch(() => {});
+        }
+      });
+      video.addEventListener('ended', () => {
+        if (video._pausedMusic) {
+          video._pausedMusic = false;
+          audio.play().then(() => {
+            isPlaying = true;
+            btn.textContent = '⏸';
+            player.classList.add('playing');
+          }).catch(() => {});
+        }
+      });
+    });
   }
 
   // ─── SCROLL REVEAL ───────────────────────────
